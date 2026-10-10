@@ -3,4 +3,11 @@ name = "knowledgebase"
 version = "0.1.0"
 edition = "2024"
 
+[workspace]
+members = ["migration"]
+
+[workspace.dependencies]
+sea-orm = { version = "2.0.4", features = ["sqlx-postgres", "runtime-tokio-rustls", "macros", "with-chrono"] }
+sea-orm-migration = { version = "2.0.4", features = ["sqlx-postgres", "runtime-tokio-rustls", "with-chrono"] }
+
 [dependencies]
