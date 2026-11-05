@@ -1,5 +1,0 @@
-#!/usr/bin/env sh
-set -e
-
-pnpm exec commitlint --edit "$1"
-pnpm exec node scripts/validate-commit-message.mjs "$1"

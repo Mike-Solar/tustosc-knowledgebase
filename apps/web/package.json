@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "knowledgebase-web",
   "type": "module",
   "private": true,
   "engines": {
@@ -17,8 +17,7 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "typecheck": "nuxt typecheck",
-    "check:pre-push": "pnpm run lint:check && pnpm run typecheck",
-    "prepare": "husky"
+    "check:pre-push": "pnpm run lint:check && pnpm run typecheck"
   },
   "lint-staged": {
     "*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": [

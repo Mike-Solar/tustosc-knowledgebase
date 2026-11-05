@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+set -e
+
+pnpm --filter knowledgebase-web exec lint-staged

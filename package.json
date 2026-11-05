@@ -1,0 +1,24 @@
+{
+  "name": "tustosc-knowledgebase",
+  "private": true,
+  "packageManager": "pnpm@11.3.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=11.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter knowledgebase-web run dev",
+    "build": "pnpm --filter knowledgebase-web run build",
+    "generate": "pnpm --filter knowledgebase-web run generate",
+    "preview": "pnpm --filter knowledgebase-web run preview",
+    "lint": "pnpm --filter knowledgebase-web run lint",
+    "lint:check": "pnpm --filter knowledgebase-web run lint:check",
+    "format": "pnpm --filter knowledgebase-web run format",
+    "typecheck": "pnpm --filter knowledgebase-web run typecheck",
+    "test": "pnpm --filter knowledgebase-web run test",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}

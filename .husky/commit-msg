@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+set -e
+
+# git 传入的提交信息文件路径是相对仓库根的；pnpm --filter 会把工作目录切到
+# apps/web，因此先转成绝对路径，再交给子命令，避免相对路径解析到 apps/web 下。
+msg_file=$(cd "$(dirname "$1")" && pwd)/$(basename "$1")
+
+pnpm --filter knowledgebase-web exec commitlint --edit "$msg_file"
+pnpm --filter knowledgebase-web exec node scripts/validate-commit-message.mjs "$msg_file"

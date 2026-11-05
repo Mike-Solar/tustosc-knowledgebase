@@ -1,0 +1,16 @@
+packages:
+  - apps/web
+
+# pnpm 10 及更早版本通过 onlyBuiltDependencies 允许依赖执行安装脚本；
+# pnpm 11 起该字段被忽略，改用 allowBuilds。两者同时保留，兼容本地与 CI 的不同 pnpm 版本。
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+  - unrs-resolver
+  - vue-demi
+
+allowBuilds:
+  '@parcel/watcher': true
+  esbuild: true
+  unrs-resolver: true
+  vue-demi: true

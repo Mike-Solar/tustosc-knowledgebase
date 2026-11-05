@@ -31,6 +31,7 @@ jobs:
         run: npm install --global openwiki@0.3.3 mermaid@11.16.0 jsdom@29.1.1
 
       - name: Run OpenWiki
+        working-directory: apps/web
         run: openwiki code --update --print
         env:
           OPENWIKI_PROVIDER: openai-compatible
@@ -50,9 +51,9 @@ jobs:
         uses: peter-evans/create-pull-request@22a9089034f40e5a961c8808d113e2c98fb63676 # v7
         with:
           add-paths: |
-            openwiki
-            AGENTS.md
-            CLAUDE.md
+            apps/web/openwiki
+            apps/web/AGENTS.md
+            apps/web/CLAUDE.md
             .github/workflows/openwiki-update.yml
           branch: openwiki/update
           commit-message: "docs: update OpenWiki"
