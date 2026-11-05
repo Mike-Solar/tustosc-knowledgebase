@@ -20,19 +20,39 @@ impl MigrationTrait for Migration {
                             .not_null()
                             .primary_key(),
                     )
-                    .col(ColumnDef::new(DocumentVersions::DocId).big_integer().not_null())
+                    .col(
+                        ColumnDef::new(DocumentVersions::DocId)
+                            .big_integer()
+                            .not_null(),
+                    )
                     // 与 documents.revision 对应；回滚也生成新版本号，不覆盖历史
-                    .col(ColumnDef::new(DocumentVersions::Version).big_integer().not_null())
-                    .col(ColumnDef::new(DocumentVersions::Title).string_len(255).not_null())
+                    .col(
+                        ColumnDef::new(DocumentVersions::Version)
+                            .big_integer()
+                            .not_null(),
+                    )
+                    .col(
+                        ColumnDef::new(DocumentVersions::Title)
+                            .string_len(255)
+                            .not_null(),
+                    )
                     .col(ColumnDef::new(DocumentVersions::Content).text().not_null())
                     // 保存备注，可选
-                    .col(ColumnDef::new(DocumentVersions::Note).string_len(255).null())
+                    .col(
+                        ColumnDef::new(DocumentVersions::Note)
+                            .string_len(255)
+                            .null(),
+                    )
                     .col(
                         ColumnDef::new(DocumentVersions::SizeBytes)
                             .big_integer()
                             .not_null(),
                     )
-                    .col(ColumnDef::new(DocumentVersions::SavedBy).big_integer().not_null())
+                    .col(
+                        ColumnDef::new(DocumentVersions::SavedBy)
+                            .big_integer()
+                            .not_null(),
+                    )
                     .col(
                         ColumnDef::new(DocumentVersions::SavedAt)
                             .timestamp_with_time_zone()
@@ -71,9 +91,7 @@ impl MigrationTrait for Migration {
 
     async fn down(&self, manager: &SchemaManager) -> Result<(), DbErr> {
         manager
-            .drop_table(
-                Table::drop().table(DocumentVersions::Table).to_owned(),
-            )
+            .drop_table(Table::drop().table(DocumentVersions::Table).to_owned())
             .await
     }
 }

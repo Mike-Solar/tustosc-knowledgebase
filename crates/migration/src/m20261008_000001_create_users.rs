@@ -12,10 +12,24 @@ impl MigrationTrait for Migration {
                     .table(Users::Table)
                     .if_not_exists()
                     // 雪花 ID，由应用层生成
-                    .col(ColumnDef::new(Users::Id).big_integer().not_null().primary_key())
-                    .col(ColumnDef::new(Users::Email).string_len(255).not_null().unique_key())
+                    .col(
+                        ColumnDef::new(Users::Id)
+                            .big_integer()
+                            .not_null()
+                            .primary_key(),
+                    )
+                    .col(
+                        ColumnDef::new(Users::Email)
+                            .string_len(255)
+                            .not_null()
+                            .unique_key(),
+                    )
                     // argon2 编码串
-                    .col(ColumnDef::new(Users::PasswordHash).string_len(255).not_null())
+                    .col(
+                        ColumnDef::new(Users::PasswordHash)
+                            .string_len(255)
+                            .not_null(),
+                    )
                     .col(ColumnDef::new(Users::Name).string_len(32).not_null())
                     .col(
                         ColumnDef::new(Users::AvatarUrl)

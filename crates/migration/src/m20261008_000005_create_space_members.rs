@@ -14,8 +14,16 @@ impl MigrationTrait for Migration {
                 Table::create()
                     .table(SpaceMembers::Table)
                     .if_not_exists()
-                    .col(ColumnDef::new(SpaceMembers::SpaceId).big_integer().not_null())
-                    .col(ColumnDef::new(SpaceMembers::UserId).big_integer().not_null())
+                    .col(
+                        ColumnDef::new(SpaceMembers::SpaceId)
+                            .big_integer()
+                            .not_null(),
+                    )
+                    .col(
+                        ColumnDef::new(SpaceMembers::UserId)
+                            .big_integer()
+                            .not_null(),
+                    )
                     .col(ColumnDef::new(SpaceMembers::Role).string_len(16).not_null())
                     .col(
                         ColumnDef::new(SpaceMembers::JoinedAt)
@@ -28,7 +36,9 @@ impl MigrationTrait for Migration {
                             .col(SpaceMembers::SpaceId)
                             .col(SpaceMembers::UserId),
                     )
-                    .check(Expr::col(SpaceMembers::Role).is_in(["OWNER", "ADMIN", "EDITOR", "VIEWER"]))
+                    .check(
+                        Expr::col(SpaceMembers::Role).is_in(["OWNER", "ADMIN", "EDITOR", "VIEWER"]),
+                    )
                     .foreign_key(
                         ForeignKey::create()
                             .name("fk_space_members_space_id")

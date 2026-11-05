@@ -19,7 +19,11 @@ impl MigrationTrait for Migration {
                             .not_null()
                             .primary_key(),
                     )
-                    .col(ColumnDef::new(RefreshTokens::UserId).big_integer().not_null())
+                    .col(
+                        ColumnDef::new(RefreshTokens::UserId)
+                            .big_integer()
+                            .not_null(),
+                    )
                     // refresh_token 的 SHA-256（十六进制），不存明文
                     .col(
                         ColumnDef::new(RefreshTokens::TokenHash)
@@ -27,7 +31,11 @@ impl MigrationTrait for Migration {
                             .not_null()
                             .unique_key(),
                     )
-                    .col(ColumnDef::new(RefreshTokens::UserAgent).string_len(255).null())
+                    .col(
+                        ColumnDef::new(RefreshTokens::UserAgent)
+                            .string_len(255)
+                            .null(),
+                    )
                     .col(
                         ColumnDef::new(RefreshTokens::ExpiresAt)
                             .timestamp_with_time_zone()

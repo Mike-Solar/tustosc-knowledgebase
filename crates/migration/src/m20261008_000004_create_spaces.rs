@@ -13,7 +13,12 @@ impl MigrationTrait for Migration {
                 Table::create()
                     .table(Spaces::Table)
                     .if_not_exists()
-                    .col(ColumnDef::new(Spaces::Id).big_integer().not_null().primary_key())
+                    .col(
+                        ColumnDef::new(Spaces::Id)
+                            .big_integer()
+                            .not_null()
+                            .primary_key(),
+                    )
                     .col(ColumnDef::new(Spaces::Name).string_len(128).not_null())
                     .col(
                         ColumnDef::new(Spaces::Description)
