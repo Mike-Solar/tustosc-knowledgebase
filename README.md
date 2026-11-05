@@ -2,7 +2,7 @@
 
 天津科技大学开放原子开源协会的**类语雀知识库**：空间、文档、版本、权限、协作，一套属于社团自己的知识沉淀平台。
 
-[![CI](https://github.com/Mike-Solar/tustosc-knowledgebase/actions/workflows/ci.yml/badge.svg)](https://github.com/Mike-Solar/tustosc-knowledgebase/actions/workflows/ci.yml)
+[![CI](https://github.com/TUST-Open-Source-Club/knowledgebase/actions/workflows/ci.yml/badge.svg)](https://github.com/TUST-Open-Source-Club/knowledgebase/actions/workflows/ci.yml)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
 
 > **当前阶段**：后端骨架已完成（配置、数据库、迁移、错误模型、中间件、健康检查、7 张表的实体），业务接口正在按 [`docs/api.md`](docs/api.md) 的规划逐步实现。本文档会随代码同步更新。

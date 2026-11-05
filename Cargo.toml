@@ -6,7 +6,7 @@ members = ["apps/server", "crates/migration"]
 version = "0.1.0"
 edition = "2024"
 license = "AGPL-3.0-or-later"
-repository = "https://github.com/Mike-Solar/tustosc-knowledgebase"
+repository = "https://github.com/TUST-Open-Source-Club/knowledgebase"
 
 [workspace.dependencies]
 sea-orm = { version = "2.0.4", features = [

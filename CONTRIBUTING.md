@@ -4,7 +4,7 @@
 
 这个项目要做的是「类语雀」的社团知识库：空间、文档、目录、历史版本、权限、协作编辑。它同时也是一个**学习型项目**——我们更在意你能否在这里学会读代码、写测试、发 PR，而不是一次写多少行。第一次参与开源？完全没问题，照下面的步骤做即可。
 
-> 仓库地址：<https://github.com/Mike-Solar/tustosc-knowledgebase>
+> 仓库地址：<https://github.com/TUST-Open-Source-Club/knowledgebase>
 > 组织：TUST-Open-Source-Club
 > 许可证：AGPL-3.0（贡献即视为同意以该许可证发布）
 
@@ -35,7 +35,7 @@
 
 ## 找一个任务
 
-1. 打开 [Issues](https://github.com/Mike-Solar/tustosc-knowledgebase/issues)，筛选 `good first issue` 标签——这些任务我们保证有明确的验收标准，且改动范围可控。
+1. 打开 [Issues](https://github.com/TUST-Open-Source-Club/knowledgebase/issues)，筛选 `good first issue` 标签——这些任务我们保证有明确的验收标准，且改动范围可控。
 2. 想做什么但 Issue 里没有？先开一个 Issue 描述你的想法，等维护者确认后再动手，避免白做。
 3. 在 Issue 下留言「我来做」，维护者会把 Issue 分配给你。**一次只认领一个**，做完再认领下一个。
 4. 如果一周内没有进展，Issue 会被释放给其他人——不是惩罚，只是让任务流动起来；随时可以重新认领。
@@ -58,11 +58,11 @@
 
 ```bash
 # 1. Fork 后克隆你自己的仓库
-git clone https://github.com/<你的用户名>/tustosc-knowledgebase.git
+git clone https://github.com/<你的用户名>/knowledgebase.git
 cd tustosc-knowledgebase
 
 # 2. 添加主仓库为上游，方便同步
-git remote add upstream https://github.com/Mike-Solar/tustosc-knowledgebase.git
+git remote add upstream https://github.com/TUST-Open-Source-Club/knowledgebase.git
 
 # 3. 安装前端依赖（根目录执行）
 pnpm install
@@ -145,7 +145,7 @@ git rebase upstream/main
    git push origin feat/document-version-api
    ```
 
-2. 在 GitHub 上向 `Mike-Solar/tustosc-knowledgebase` 的 `main` 发起 PR，标题遵循提交信息格式，例如 `feat(server): 添加文档历史版本接口`。
+2. 在 GitHub 上向 `TUST-Open-Source-Club/knowledgebase` 的 `main` 发起 PR，标题遵循提交信息格式，例如 `feat(server): 添加文档历史版本接口`。
 3. PR 描述请包含：
    - **改了什么**：一句话说明。
    - **为什么**：关联 Issue，写 `Closes #12`。
